@@ -2,9 +2,12 @@
 
 Some code which creates hexagon based planets in Unity. For performance, the hexagons are seperated into chunks to overcome the overhead of associated with each being it's own object. When a hexagon's height or color changes, the chunk's mesh is automatically recomputed.
 
+![UnityHexPlanet](https://user-images.githubusercontent.com/21147581/203176777-610e9e23-b38b-4f98-8bd6-edef96d9d083.PNG)
+
 This demo also comes with a basic editor which can raise and lower selected tiles and set them to specifc heights.
 
-![UnityHexPlanet](https://user-images.githubusercontent.com/21147581/203176777-610e9e23-b38b-4f98-8bd6-edef96d9d083.PNG)
+![image](https://user-images.githubusercontent.com/21147581/203177325-806bc61a-f95b-46e7-b94f-bb94e6304e48.png)
+
 
 ## Known issues
 
