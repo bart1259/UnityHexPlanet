@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e0dd154f05ccc478664dee44d860c2, type: 3}
+  m_Name: PerlinTerrainGenerator
+  m_EditorClassIdentifier: 
+  octaves: 4
+  persistence: 0.72
+  lacunarity: 2.91
+  minHeight: 0
+  maxHeight: 30
+  noiseScaling: 4
+  colorHeights:
+  - color:
+      serializedVersion: 2
+      rgba: 4294901760
+    maxHeight: 17.5
+  - color:
+      serializedVersion: 2
+      rgba: 4289200121
+    maxHeight: 18.5
+  - color:
+      serializedVersion: 2
+      rgba: 4278440963
+    maxHeight: 21.5
+  - color:
+      serializedVersion: 2
+      rgba: 4287203721
+    maxHeight: 23.5
+  - color:
+      serializedVersion: 2
+      rgba: 4294967295
+    maxHeight: 100
