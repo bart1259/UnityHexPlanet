@@ -50,7 +50,11 @@ To use this new custom Generator, `right-click in the Project Explorer > Create 
 
 ## Making a Custom Tile + Generator
 
-In order to support making new complex geometry, we have to override the `CreateHexTile` method and instead of returning a `HexTile` object, return a custom `CustomSmoothHexTile` object.
+In this section we show how to make tiles that have smooth transitions in height and color as pictured below. We use a custom generator and a custom `HexTile` class. 
+
+![CustomHexTileAndGenerator](https://user-images.githubusercontent.com/21147581/204072323-3245f83c-6dbb-48d6-820c-ef039e14e318.PNG)
+
+In order make this new complex geometry, we have to override the `CreateHexTile` method and instead of returning a `HexTile` object, return a custom `CustomSmoothHexTile` object.
 
 ```C#
 using UnityHexPlanet;
@@ -81,9 +85,9 @@ public class MyCustomTerrainGenerator : BaseTerrainGenerator
 
 ```
 
-Here is the implemenation of a custom class. Most of the work is done by the `AppendToMesh` method which appends the necessary verticies, triangles, and vertex colors to an in progress mesh. The method is only responsible for adding the necessary geometry of its hexagon.
+Here is the implemenation of the `CustomSmoothHexTile` class. Most of the work is done by the overwritten `AppendToMesh` method which appends the necessary verticies, triangles, and vertex colors to an in progress mesh. The method is only responsible for adding the necessary geometry of its hexagon.
 
-Another interesting thing to note is that after setting the borderPercent in `SetBorderPercent`, a call to `TriggerMeshRecompute` is made. This ensures the chunk that the hexagon is associated with (along with neighboring chunks if the hexagon lies on a border) is rerendered which reflects the change made to the hexagon data.
+Another interesting thing to note is that after setting the borderPercent in `SetBorderPercent`, a call to `TriggerMeshRecompute` is made. This ensures the chunk that the hexagon is associated with (along with neighboring chunks if the hexagon lies on a border) is rerendered so the chunk mesh can reflect the changes made to the hexagon data.
 
 ```C#
 // Create a custom hex tile to generate the new geometry
@@ -165,3 +169,11 @@ public class CustomSmoothHexTile : HexTile {
     }
 }
 ```
+
+## More images
+
+### Subdivision 5 Planet + Subdivision 3 Chunks w/ every chunk having a unique color
+![image](https://user-images.githubusercontent.com/21147581/204072490-71d0a90f-fea9-45f3-9bca-dbe31ba58ab6.png)
+
+### Subdivision 7 Planet
+![HexPlanetSuper](https://user-images.githubusercontent.com/21147581/204072368-31d05037-1d88-4f95-9295-560d09f6a730.PNG)
